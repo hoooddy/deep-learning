@@ -63,7 +63,7 @@ if __name__ == '__main__':
     OR(truth_table_dict)
 
     """
-    [AND] w1: 0.9, w2: 0.6, bias: 0.9
-    [NAND] w1: -0.7, w2: -0.4, bias: -0.8
-    [OR] w1: 0.6, w2: 0.8, bias: 0.4
+    [AND] w1: 0.8, w2: 0.3, bias: -0.9
+    [NAND] w1: -0.8, w2: -0.6, bias: 0.9
+    [OR] w1: 0.5, w2: 0.6, bias: -0.1
     """
