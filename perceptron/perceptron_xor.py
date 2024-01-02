@@ -66,7 +66,7 @@ if __name__ == '__main__':
     or_truth_table = get_truth_table(truth_table_dict, [0, 1, 1, 1], 'OR')
     weight['OR']['w1'], weight['OR']['w2'], weight['OR']['bias'] = learning(or_truth_table)
 
-    # XOR 연삽
+    # XOR 연산
     xor_truth_table = get_truth_table(truth_table_dict, [0, 1, 1, 0], 'XOR')
     XOR(xor_truth_table, weight)
 
