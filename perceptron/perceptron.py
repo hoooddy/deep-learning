@@ -1,6 +1,7 @@
 import random
 import pandas as pd
 
+
 def perceptron(w1,x1, w2,x2, theta):
     result = (w1 * x1) + (w2 * x2)
 
@@ -29,6 +30,7 @@ def get_truth_table(truth_table_dict, y, type):
     truth_table_dict['type'] = type
     return pd.DataFrame(truth_table_dict)
 
+
 if __name__ == '__main__':
     truth_table_dict = {'x1': [0, 1, 0, 1],
                         'x2': [0, 0, 1, 1]}
@@ -50,7 +52,6 @@ if __name__ == '__main__':
     # OR 연산 학습
     or_truth_table = get_truth_table(truth_table_dict, [0, 1, 1, 1], 'OR')
     weight['OR']['w1'], weight['OR']['w2'], weight['OR']['theta'] = learning(or_truth_table)
-
 
     print(f"weight = {weight}")
     """weight = {

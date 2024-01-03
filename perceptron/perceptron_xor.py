@@ -1,6 +1,7 @@
 import random
 import pandas as pd
 
+
 def perceptron(w1,x1, w2,x2, bias):
     result = (w1 * x1) + (w2 * x2) + bias
 
@@ -43,6 +44,7 @@ def get_truth_table(truth_table_dict, y, type):
     truth_table_dict['y'] = y
     truth_table_dict['type'] = type
     return pd.DataFrame(truth_table_dict)
+
 
 if __name__ == '__main__':
     truth_table_dict = {'x1': [0, 1, 0, 1],
