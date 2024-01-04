@@ -13,6 +13,7 @@ def perceptron(w1,x1, w2,x2, bias):
 
 def learning(truth_table_df):
     while True:
+        # -0.9 ~ 0.9 사이의 랜덤 값
         w1 = random.randint(-9, 9)/10
         w2 = random.randint(-9, 9)/10
         bias = random.randint(-9, 9)/10
@@ -35,6 +36,7 @@ if __name__ == '__main__':
     truth_table_dict = {'x1': [0, 1, 0, 1],
                         'x2': [0, 0, 1, 1]}
 
+    # 'AND', 'NAND', 'OR' 연산을 위한 가중치
     weight = {
         'AND': {},
         'NAND': {},
