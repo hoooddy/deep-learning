@@ -41,6 +41,7 @@ def XOR(xor_truth_table, weight):
         print(f"{row['x1']} xor {row['x2']} = {xor_result} -> xor_answer: {row['y']}")
 
 
+# 연산에 따른 진리표 반환
 def get_truth_table(truth_table_dict, y, type):
     truth_table_dict['y'] = y
     truth_table_dict['type'] = type

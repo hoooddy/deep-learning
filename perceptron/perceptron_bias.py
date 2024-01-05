@@ -26,6 +26,7 @@ def learning(truth_table_df):
                 return w1, w2, bias
 
 
+# 연산에 따른 진리표 반환
 def get_truth_table(truth_table_dict, y, type):
     truth_table_dict['y'] = y
     truth_table_dict['type'] = type
