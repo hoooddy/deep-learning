@@ -14,7 +14,7 @@ def perceptron(x, w1_w2, b):
 
 
 def learning(x, y):
-    # randint: [low, high) = low 이상, high 미만
+    # np.random.randint: [low, high) = low 이상, high 미만
     while True:
         w1_w2 = np.random.randint(-10, 11, (2, 1)) / 10
         b = np.random.randint(-10, 11, (1, 1)) / 10
@@ -88,7 +88,7 @@ if __name__ == '__main__':
     #     }
     # }
 
-    # XOR 연산 학습
+    # XOR 연산
     xor_output = np.array([[0],
                            [1],
                            [1],
