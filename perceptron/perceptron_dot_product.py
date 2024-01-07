@@ -1,7 +1,7 @@
 import numpy as np
 
 
-def perceptron(x, w1_w2, b):
+def dot_product(x, w1_w2, b):
     result = np.dot(x, w1_w2) + b
 
     result = result > 0
@@ -18,18 +18,18 @@ def learning(x, y):
     while True:
         w1_w2 = np.random.randint(-10, 11, (2, 1)) / 10
         b = np.random.randint(-10, 11, (1, 1)) / 10
-        result = perceptron(x, w1_w2, b)
+        result = dot_product(x, w1_w2, b)
 
         if (result == y).all():
             return w1_w2, b
 
 
 def xor(x, w1_w2):
-    nand_result = perceptron(x, w1_w2['NAND']['w1_w2'], w1_w2['NAND']['bias'])
-    or_result = perceptron(x, w1_w2['OR']['w1_w2'], w1_w2['OR']['bias'])
+    nand_result = dot_product(x, w1_w2['NAND']['w1_w2'], w1_w2['NAND']['bias'])
+    or_result = dot_product(x, w1_w2['OR']['w1_w2'], w1_w2['OR']['bias'])
 
     x = np.concatenate((nand_result, or_result), axis=1)
-    and_result = perceptron(x, w1_w2['AND']['w1_w2'], w1_w2['AND']['bias'])
+    and_result = dot_product(x, w1_w2['AND']['w1_w2'], w1_w2['AND']['bias'])
 
     xor_result = and_result
     return xor_result
