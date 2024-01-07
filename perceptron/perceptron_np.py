@@ -3,8 +3,13 @@ import numpy as np
 
 def perceptron(x, w1_w2, b):
     result = np.dot(x, w1_w2) + b
+
     result = result > 0
+    # [[True, False, True, False]]
+
     result = result.astype(np.int32)
+    # [[1, 0, 1, 0]]
+
     return result
 
 
@@ -19,6 +24,17 @@ def learning(x, y):
             return w1_w2, b
 
 
+def xor(x, w1_w2):
+    nand_result = perceptron(x, w1_w2['NAND']['w1_w2'], w1_w2['NAND']['bias'])
+    or_result = perceptron(x, w1_w2['OR']['w1_w2'], w1_w2['OR']['bias'])
+
+    x = np.concatenate((nand_result, or_result), axis=1)
+    and_result = perceptron(x, w1_w2['AND']['w1_w2'], w1_w2['AND']['bias'])
+
+    xor_result = and_result
+    return xor_result
+
+
 if __name__ == '__main__':
     dataset = np.array([[0, 0],
                         [1, 0],
@@ -29,43 +45,60 @@ if __name__ == '__main__':
     weight = {
         'AND': {},
         'NAND': {},
-        'OR':  {}
+        'OR': {}
     }
 
-    # # AND 연산 학습
+    # AND 연산 학습
     and_output = np.array([[0],
                            [0],
                            [0],
                            [1]])
     weight['AND']['w1_w2'], weight['AND']['bias'] = learning(dataset, and_output)
 
+    # NAND 연산 학습
     nand_output = np.array([[1],
                             [1],
                             [1],
                             [0]])
     weight['NAND']['w1_w2'], weight['NAND']['bias'] = learning(dataset, nand_output)
 
+    # OR 연산 학습
     or_output = np.array([[0],
-                          [0],
-                          [0],
+                          [1],
+                          [1],
                           [1]])
     weight['OR']['w1_w2'], weight['OR']['bias'] = learning(dataset, or_output)
 
     print(f"weight = {weight}")
     # weight = {
     #     'AND': {
-    #         'w1_w2': array([[0.3],
-    #                         [0.5]]),
-    #         'bias': array([[-0.7]])
+    #         'w1_w2': array([[0.9],
+    #                         [0.4]]),
+    #         'bias': array([[-1.]])
     #     },
     #     'NAND': {
-    #         'w1_w2': array([[-0.4],
+    #         'w1_w2': array([[-0.6],
     #                         [-0.7]]),
     #         'bias': array([[1.]])
     #     },
     #     'OR': {
-    #         'w1_w2': array([[0.4],
-    #                         [0.4]]),
+    #         'w1_w2': array([[0.9],
+    #                         [1.]]),
     #         'bias': array([[-0.7]])
     #     }
     # }
+
+    # XOR 연산 학습
+    xor_output = np.array([[0],
+                           [1],
+                           [1],
+                           [0]])
+    xor_result = xor(dataset, weight)
+
+    print(f"xor_result: {xor_result}")
+    print(f"result: {(xor_output == xor_result).all()}")
+    # xor_result: [[0]
+    #              [1]
+    #              [1]
+    #              [0]]
+    # result: True
