@@ -3,11 +3,11 @@ import random
 
 
 def perceptron(x1, w1, x2, w2, b):
-    result = x1 * w1 + x2 * w2 + b
+    a = x1 * w1 + x2 * w2 + b
 
-    if result <= 0:
+    if a <= 0:
         return 0
-    elif result > 0:
+    elif a > 0:
         return 1
 
 

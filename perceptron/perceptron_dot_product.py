@@ -2,15 +2,15 @@ import numpy as np
 
 
 def dot_product(x, w1_w2, b):
-    result = np.dot(x, w1_w2) + b
+    a = np.dot(x, w1_w2) + b
 
-    result = result > 0
+    a = a > 0
     # [[True, False, True, False]]
 
-    result = result.astype(np.int32)
+    a = a.astype(np.int32)
     # [[1, 0, 1, 0]]
 
-    return result
+    return a
 
 
 def learning(x, y):

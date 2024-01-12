@@ -3,11 +3,11 @@ import pandas as pd
 
 
 def perceptron(w1,x1, w2,x2, bias):
-    result = (w1 * x1) + (w2 * x2) + bias
+    a = (w1 * x1) + (w2 * x2) + bias
 
-    if result <= 0:
+    if a <= 0:
         return 0
-    elif result > 0:
+    elif a > 0:
         return 1
 
 

@@ -3,11 +3,11 @@ import pandas as pd
 
 
 def perceptron(w1,x1, w2,x2, theta):
-    result = (w1 * x1) + (w2 * x2)
+    a = (w1 * x1) + (w2 * x2)
 
-    if result <= theta:
+    if a <= theta:
         return 0
-    elif result > theta:
+    elif a > theta:
         return 1
 
 
