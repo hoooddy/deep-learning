@@ -2,17 +2,17 @@ import numpy as np
 import matplotlib.pylab as plt
 
 
-def step_function(input_signal):
+def step_function(a):
     # if input_signal <= 0:
     #     return 0
     # elif input_signal > 0:
     #     return 1
 
-    return np.array(input_signal > 0, dtype=np.int32)
+    return np.array(a > 0, dtype=np.int32)
 
 
-def sigmoid(input_signal):
-    return 1 / (1 + np.exp(-input_signal))
+def sigmoid(a):
+    return 1 / (1 + np.exp(-a))
 
 
 if __name__ == "__main__":
