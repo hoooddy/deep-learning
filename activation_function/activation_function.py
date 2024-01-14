@@ -14,18 +14,29 @@ def step_function(a):
 def sigmoid(a):
     return 1 / (1 + np.exp(-a))
 
+def tanh(a):
+    return (np.exp(a) - np.exp(-a))/(np.exp(a) + np.exp(-a))
+
+
 
 if __name__ == "__main__":
-    print(step_function(input_signal=-0.1))
-    print(step_function(input_signal=0.1))
+    print(step_function(a=-0.1))
+    print(step_function(a=0.1))
     x = np.arange(-5.0, 5.0, 0.1)
     y = step_function(x)
     plt.plot(x, y)
     plt.show()
 
-    print(sigmoid(input_signal=-0.1))
-    print(sigmoid(input_signal=1))
+    print(sigmoid(a=-0.1))
+    print(sigmoid(a=1))
     x = np.arange(-5.0, 5.0, 0.1)
     y = sigmoid(x)
+    plt.plot(x, y)
+    plt.show()
+
+    print(tanh(a=-0.1))
+    print(tanh(a=1))
+    x = np.arange(-5.0, 5.0, 0.1)
+    y = tanh(x)
     plt.plot(x, y)
     plt.show()
