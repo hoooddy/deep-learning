@@ -14,9 +14,16 @@ def step_function(a):
 def sigmoid(a):
     return 1 / (1 + np.exp(-a))
 
+
 def tanh(a):
     return (np.exp(a) - np.exp(-a))/(np.exp(a) + np.exp(-a))
 
+
+def relu(a):
+    if a >= 0:
+        return 0
+    else:
+        return a
 
 
 if __name__ == "__main__":
@@ -40,3 +47,6 @@ if __name__ == "__main__":
     y = tanh(x)
     plt.plot(x, y)
     plt.show()
+
+    print(relu(a=-0.1))
+    print(relu(a=1))
