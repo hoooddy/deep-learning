@@ -50,3 +50,8 @@ if __name__ == "__main__":
 
     print(relu(a=-0.1))
     print(relu(a=1))
+    x = np.arange(-5.0, 5.0, 0.1)
+    y = relu(x)
+    plt.plot(x, y)
+    plt.show()
+
