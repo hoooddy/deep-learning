@@ -1,6 +1,6 @@
 import random
 import pandas as pd
-from activation_function.activation_function import step_function
+from activation_function import step_function
 
 
 # 활성화 함수로 계단 함수를 적용한 퍼셉트론
