@@ -4,10 +4,10 @@ import os
 
 
 def step_function(a):
-    # if input_signal <= 0:
-    #     return 0
-    # elif input_signal > 0:
-    #     return 1
+    if a <= 0:
+        return 0
+    elif a > 0:
+        return 1
 
     return np.array(a > 0, dtype=np.int32)
 
