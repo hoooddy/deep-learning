@@ -20,5 +20,3 @@ def tanh(a):
 
 def relu(a):
     return np.maximum(0, a)
-
-

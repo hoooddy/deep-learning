@@ -17,6 +17,7 @@ def draw_graph(activation_function, graph_title):
     plt.plot(x, y)
 
     plt.savefig(f"graph/{graph_title}.png")
+    plt.clf()
 
 
 if __name__ == "__main__":
