@@ -20,3 +20,7 @@ def tanh(a):
 
 def relu(a):
     return np.maximum(0, a)
+
+
+def leaky_relu(a):
+    return np.maximum(0.01*a, a)
