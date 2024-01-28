@@ -26,7 +26,7 @@ if __name__ == "__main__":
 
     activation_function_example(step_function, "step_function")
     draw_graph(step_function, "Step_Function")
-
+    print("-------------------------------------")
     activation_function_example(sigmoid, "sigmoid")
     draw_graph(sigmoid, "Sigmoid")
 
