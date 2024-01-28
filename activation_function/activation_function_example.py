@@ -37,3 +37,4 @@ if __name__ == "__main__":
     draw_graph(relu, "ReLU")
 
     activation_function_example(leaky_relu, "leaky_relu")
+    draw_graph(leaky_relu, "Leaky_ReLU")
