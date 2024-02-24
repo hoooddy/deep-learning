@@ -21,8 +21,8 @@ def draw_graph(activation_function, graph_title):
 
 
 if __name__ == "__main__":
-    if not os.path.exists("graph"):
-        os.makedirs("graph")
+    if not os.path.exists("graph_fig"):
+        os.makedirs("graph_fig")
 
     activation_function_example(step_function, "step_function")
     draw_graph(step_function, "Step_Function")
